@@ -44,12 +44,11 @@ push-k8s-template:
     - push_k8s_template $HelmTemplateFolderName $ImageName $Tag
 
 deploy-dev:
-  extends: .deploy-template
+  extends: .deploy-k8s-template
   image: 
     name: pgtgs/tgs-backend-deploy:latest
   variables:
     namespace: dev
-    kube_config: KubeConfig_Raypro_dev
     replica: 1
     DedicatedKey: dedicated_game
     NodeSelectorKey: node-selector_game
@@ -66,17 +65,16 @@ deploy-dev:
       artifacts: true
   only:
     - main
-  when: on_success
+  when: manual
   script:
     - deploy_k8s default $HelmTemplateFolderName $namespace
 
 deploy-staging:
-  extends: .deploy-template
+  extends: .deploy-k8s-template
   image: 
     name: pgtgs/tgs-backend-deploy:latest
   variables:
     namespace: staging
-    kube_config: KubeConfig_Raypro_staging
     replica: 1
     DedicatedKey: dedicated_game
     NodeSelectorKey: node-selector_game
@@ -93,16 +91,16 @@ deploy-staging:
       artifacts: true
   only:
     - main
+  when: manual
   script:
     - deploy_k8s default $HelmTemplateFolderName $namespace
 
 deploy-prod:
-  extends: .deploy-template
+  extends: .deploy-k8s-template
   image: 
     name: pgtgs/tgs-backend-deploy:latest
   variables:
     namespace: prod
-    kube_config: KubeConfig_Raypro_prod
     replica: 1
     DedicatedKey: dedicated_game
     NodeSelectorKey: node-selector_game
