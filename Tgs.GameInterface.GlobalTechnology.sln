@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.GameInterface.GlobalTechnology.Core", "Tgs.GameInterface.GlobalTechnology.Core\Tgs.GameInterface.GlobalTechnology.Core.csproj", "{A6B681D6-8044-4107-9A5A-E7E0D692F2F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.GameInterface.GlobalTechnology", "Tgs.GameInterface.GlobalTechnology\Tgs.GameInterface.GlobalTechnology.csproj", "{E4F7D2C0-54CD-4033-B940-26F94BCEE4E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.GameInterface.GlobalTechnology.Core.UnitTest", "Tgs.GameInterface.GlobalTechnology.Core.UnitTest\Tgs.GameInterface.GlobalTechnology.Core.UnitTest.csproj", "{64610A07-720F-4906-958F-B12AA93373C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameInterface.GlobalTechnology.Protos", "Tgs.GameInterface.GlobalTechnology.Protos\Tgs.GameInterface.GlobalTechnology.Protos.csproj", "{AD142BB0-5AF4-4F4F-8103-8D667FA116E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameInterface.GlobalTechnology.IntegrationTest", "Tgs.GameInterface.GlobalTechnology.IntegrationTest\Tgs.GameInterface.GlobalTechnology.IntegrationTest.csproj", "{B280CB7F-D8E9-408E-8A6C-5334591AC101}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tgs.GameInterface.GlobalTechnology.Client", "Tgs.GameInterface.GlobalTechnology.Client\Tgs.GameInterface.GlobalTechnology.Client.csproj", "{6842F4BE-1F41-4A16-9CF4-7AFF94CB8964}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6B681D6-8044-4107-9A5A-E7E0D692F2F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B681D6-8044-4107-9A5A-E7E0D692F2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B681D6-8044-4107-9A5A-E7E0D692F2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B681D6-8044-4107-9A5A-E7E0D692F2F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4F7D2C0-54CD-4033-B940-26F94BCEE4E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4F7D2C0-54CD-4033-B940-26F94BCEE4E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4F7D2C0-54CD-4033-B940-26F94BCEE4E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4F7D2C0-54CD-4033-B940-26F94BCEE4E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64610A07-720F-4906-958F-B12AA93373C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64610A07-720F-4906-958F-B12AA93373C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64610A07-720F-4906-958F-B12AA93373C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64610A07-720F-4906-958F-B12AA93373C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD142BB0-5AF4-4F4F-8103-8D667FA116E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD142BB0-5AF4-4F4F-8103-8D667FA116E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD142BB0-5AF4-4F4F-8103-8D667FA116E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD142BB0-5AF4-4F4F-8103-8D667FA116E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B280CB7F-D8E9-408E-8A6C-5334591AC101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B280CB7F-D8E9-408E-8A6C-5334591AC101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B280CB7F-D8E9-408E-8A6C-5334591AC101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B280CB7F-D8E9-408E-8A6C-5334591AC101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6842F4BE-1F41-4A16-9CF4-7AFF94CB8964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6842F4BE-1F41-4A16-9CF4-7AFF94CB8964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6842F4BE-1F41-4A16-9CF4-7AFF94CB8964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6842F4BE-1F41-4A16-9CF4-7AFF94CB8964}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6940480A-FEEA-482E-B22E-037D978FC71D}
+	EndGlobalSection
+EndGlobal

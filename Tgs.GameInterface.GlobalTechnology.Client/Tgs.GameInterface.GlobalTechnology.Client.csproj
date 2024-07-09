@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>1.0.0</Version>
+		<Authors>Raypro</Authors>
+		<PackageProjectUrl>https://gitlab.com/rayprosoft/tgs-gameinterface-globaltechnology</PackageProjectUrl>
+		<RepositoryUrl>https://gitlab.com/rayprosoft/tgs-gameinterface-globaltechnology.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<RootNamespace>Tgs.GameInterface.GlobalTechnology.Client</RootNamespace>
+		<PackageId>Tgs.GameInterface.GlobalTechnology.Client</PackageId>
+		<Title>Tgs.GameInterface.GlobalTechnology.Client</Title>
+		<Description>Tgs.GameInterface.GlobalTechnology.Client</Description>
+		<PackageTags>Tgs GameInterface GlobalTechnology Client</PackageTags>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="PhoenixToolkits.NuGet.BuildTools" Version="0.0.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Tgs.GameInterface.GlobalTechnology.Protos\Tgs.GameInterface.GlobalTechnology.Protos.csproj">
+			<PrivateAssets>all</PrivateAssets>
+		</ProjectReference>
+	</ItemGroup>
+
+</Project>
