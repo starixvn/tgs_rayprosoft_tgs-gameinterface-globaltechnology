@@ -7,7 +7,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<Authors>Raypro</Authors>
 		<PackageProjectUrl>https://gitlab.com/rayprosoft/tgs-gameinterface-globaltechnology</PackageProjectUrl>
 		<RepositoryUrl>https://gitlab.com/rayprosoft/tgs-gameinterface-globaltechnology.git</RepositoryUrl>
@@ -21,11 +21,19 @@
 
 
 	<ItemGroup>
-		<PackageReference Include="PhoenixToolkits.NuGet.BuildTools" Version="0.0.3">
+		<PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.63.0" />
+		<PackageReference Include="Grpc.Net.ClientFactory" Version="2.63.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.64.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="PhoenixToolkits.NuGet.BuildTools" Version="0.0.3">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="PhoenixToolkits.Protobuf.ExtendTypes" Version="0.0.7" />
 	</ItemGroup>
+
 
 	<ItemGroup>
 		<ProjectReference Include="..\Tgs.GameInterface.GlobalTechnology.Protos\Tgs.GameInterface.GlobalTechnology.Protos.csproj">
