@@ -1,7 +1,6 @@
 ﻿namespace Tgs.GameInterface.GlobalTechnology.Core.Models;
 public record HistoryGameResp(
 	string PlayerCode,
-	string ExternalRoundId,
 	string ExternalBetId,
 	string ExternalGameId,
 	DateTimeOffset ExternalCreatedOn,

@@ -1,7 +1,6 @@
 ﻿namespace Tgs.GameInterface.GlobalTechnology.Core.ApplicationServices;
 public record GameRecordResult(
 	string PlayerCode,
-	string ExternalRoundId,
 	string ExternalBetId,
 	string ExternalGameId,
 	DateTimeOffset ExternalCreatedOn,

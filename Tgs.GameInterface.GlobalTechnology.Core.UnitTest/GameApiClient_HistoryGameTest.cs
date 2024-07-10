@@ -102,8 +102,7 @@ public class GameApiClient_HistoryGameTest
 		var historyGame = actual.FirstOrDefault();
 		Assert.NotNull(historyGame);
 		Assert.Equal("4ucmqplxb029", historyGame.PlayerCode);
-		Assert.Equal("gpas_3_CT76ykoNwUhtp7E5X3", historyGame.ExternalRoundId);
-		Assert.Equal("4dae8cebcfaf4e0191e437e1c295deca", historyGame.ExternalBetId);
+		Assert.Equal("gpas_3_CT76ykoNwUhtp7E5X3", historyGame.ExternalBetId);
 		Assert.Equal("gpas_dostormspp_pop", historyGame.ExternalGameId);
 		Assert.Equal(new DateTimeOffset(2024, 07, 08, 07, 06, 01, 000, TimeSpan.Zero), historyGame.ExternalCreatedOn);
 		Assert.Equal(new DateTimeOffset(2024, 07, 08, 07, 06, 02, 608, TimeSpan.Zero), historyGame.ExternalClosedOn);
@@ -208,8 +207,7 @@ public class GameApiClient_HistoryGameTest
 		var historyGame = actual.FirstOrDefault();
 		Assert.NotNull(historyGame);
 		Assert.Equal("4ucmqplxb029", historyGame.PlayerCode);
-		Assert.Equal("gpas_9LdEl9Rtbt_zDNC0oX8N", historyGame.ExternalRoundId);
-		Assert.Equal("4dae8cebcfaf4e0191e437e1c295deca", historyGame.ExternalBetId);
+		Assert.Equal("gpas_9LdEl9Rtbt_zDNC0oX8N", historyGame.ExternalBetId);
 		Assert.Equal("gpas_dostormspp_pop", historyGame.ExternalGameId);
 		Assert.Equal(new DateTimeOffset(2024, 07, 08, 07, 06, 05, 000, TimeSpan.Zero), historyGame.ExternalCreatedOn);
 		Assert.Equal(new DateTimeOffset(2024, 07, 08, 07, 06, 06, 000, TimeSpan.Zero), historyGame.ExternalClosedOn);
@@ -314,8 +312,7 @@ public class GameApiClient_HistoryGameTest
 		var historyGame = actual.FirstOrDefault();
 		Assert.NotNull(historyGame);
 		Assert.Equal("4ucmqplxb029", historyGame.PlayerCode);
-		Assert.Equal("live_87615669175", historyGame.ExternalRoundId);
-		Assert.Equal("25e1afd4d45c46ffb8dbbbd75fc5da7b", historyGame.ExternalBetId);
+		Assert.Equal("live_87615669175", historyGame.ExternalBetId);
 		Assert.Equal("ubal", historyGame.ExternalGameId);
 		Assert.Equal(new DateTimeOffset(2024, 07, 09, 02, 50, 39, 000, TimeSpan.Zero), historyGame.ExternalCreatedOn);
 		Assert.Equal(new DateTimeOffset(2024, 07, 09, 02, 50, 52, 000, TimeSpan.Zero), historyGame.ExternalClosedOn);
@@ -420,8 +417,7 @@ public class GameApiClient_HistoryGameTest
 		var historyGame = actual.FirstOrDefault();
 		Assert.NotNull(historyGame);
 		Assert.Equal("4ucmqplxb029", historyGame.PlayerCode);
-		Assert.Equal("live_87615669173", historyGame.ExternalRoundId);
-		Assert.Equal("25e1afd4d45c46ffb8dbbbd75fc5da7b", historyGame.ExternalBetId);
+		Assert.Equal("live_87615669173", historyGame.ExternalBetId);
 		Assert.Equal("ubal", historyGame.ExternalGameId);
 		Assert.Equal(new DateTimeOffset(2024, 07, 09, 02, 49, 20, 000, TimeSpan.Zero), historyGame.ExternalCreatedOn);
 		Assert.Equal(new DateTimeOffset(2024, 07, 09, 02, 49, 34, 808, TimeSpan.Zero), historyGame.ExternalClosedOn);

@@ -127,7 +127,6 @@ public class GameInterfaceGlobalTechnologyGrpcService(
 			reply.Items.Add(new GameRecordInfo
 			{
 				PlayerCode = result.PlayerCode,
-				ExternalRoundId = result.ExternalRoundId,
 				ExternalBetId = result.ExternalBetId,
 				ExternalGameId = result.ExternalGameId,
 				ExternalCreatedOn = result.ExternalCreatedOn.ToTimestamp(),

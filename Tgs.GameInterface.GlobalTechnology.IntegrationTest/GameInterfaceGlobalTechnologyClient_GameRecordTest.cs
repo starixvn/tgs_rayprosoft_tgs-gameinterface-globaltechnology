@@ -23,8 +23,7 @@ public class GameInterfaceGlobalTechnologyClient_GameRecordTest
 
 		var result = new GameRecordResult(
 			PlayerCode: "4ucmqplxb029",
-			ExternalRoundId: "live_87615669175",
-			ExternalBetId: "25e1afd4d45c46ffb8dbbbd75fc5da7b",
+			ExternalBetId: "live_87615669175",
 			ExternalGameId: "ubal",
 			ExternalCreatedOn: new DateTimeOffset(2024, 07, 09, 02, 50, 39, 000, TimeSpan.Zero),
 			ExternalClosedOn: new DateTimeOffset(2024, 07, 09, 02, 50, 52, 000, TimeSpan.Zero),
@@ -103,7 +102,6 @@ public class GameInterfaceGlobalTechnologyClient_GameRecordTest
 		var info = actual.FirstOrDefault();
 		Assert.NotNull(info);
 		Assert.Equal(result.PlayerCode, info.PlayerCode);
-		Assert.Equal(result.ExternalRoundId, info.ExternalRoundId);
 		Assert.Equal(result.ExternalBetId, info.ExternalBetId);
 		Assert.Equal(result.ExternalGameId, info.ExternalGameId);
 		Assert.Equal(result.ExternalCreatedOn, info.ExternalCreatedOn.ToDateTimeOffset());

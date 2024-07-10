@@ -22,7 +22,6 @@ internal class GameRecordQueryService(
 		{
 			yield return new GameRecordResult(
 				PlayerCode: resp.PlayerCode,
-				ExternalRoundId: resp.ExternalRoundId,
 				ExternalBetId: resp.ExternalBetId,
 				ExternalGameId: resp.ExternalGameId,
 				ExternalCreatedOn: resp.ExternalCreatedOn,

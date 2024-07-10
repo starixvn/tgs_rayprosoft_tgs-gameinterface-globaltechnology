@@ -124,19 +124,18 @@ message GameRecordReply {
 
 message GameRecordInfo {
 	string player_code = 1;
-	string external_round_id = 2;
-	string external_bet_id = 3;
-	string external_game_id = 4;
-	google.protobuf.Timestamp external_created_on = 5;
-	google.protobuf.Timestamp external_closed_on = 6;
-	bool is_free_game = 7;
-	bool is_bonus_game = 8;
-	phoenix.protobuf.DecimalValue bet = 9;
-	phoenix.protobuf.DecimalValue settle = 10;
-	phoenix.protobuf.DecimalValue win_loss = 11;
-	phoenix.protobuf.DecimalValue jackpot_contribution = 12;
-	phoenix.protobuf.DecimalValue jackpot_win = 13;
-	string additional_data = 14;
+	string external_bet_id = 2;
+	string external_game_id = 3;
+	google.protobuf.Timestamp external_created_on = 4;
+	google.protobuf.Timestamp external_closed_on = 5;
+	bool is_free_game = 6;
+	bool is_bonus_game = 7;
+	phoenix.protobuf.DecimalValue bet = 8;
+	phoenix.protobuf.DecimalValue settle = 9;
+	phoenix.protobuf.DecimalValue win_loss = 10;
+	phoenix.protobuf.DecimalValue jackpot_contribution = 11;
+	phoenix.protobuf.DecimalValue jackpot_win = 12;
+	string additional_data = 13;
 }
 
 message CheckingServiceReply{

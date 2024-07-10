@@ -25,8 +25,7 @@ public class GameRecordQueryServiceTest
 
 		var resp = new HistoryGameResp(
 			PlayerCode: "4ucmqplxb029",
-			ExternalRoundId: "gpas_3_CT76ykoNwUhtp7E5X3",
-			ExternalBetId: "4dae8cebcfaf4e0191e437e1c295deca",
+			ExternalBetId: "gpas_3_CT76ykoNwUhtp7E5X3",
 			ExternalGameId: "gpas_dostormspp_pop",
 			ExternalCreatedOn: new DateTimeOffset(2024, 07, 08, 07, 06, 01, 000, TimeSpan.Zero),
 			ExternalClosedOn: new DateTimeOffset(2024, 07, 08, 07, 06, 02, 608, TimeSpan.Zero),
@@ -91,7 +90,6 @@ public class GameRecordQueryServiceTest
 		var result = actual.FirstOrDefault();
 		Assert.NotNull(result);
 		Assert.Equal(resp.PlayerCode, result.PlayerCode);
-		Assert.Equal(resp.ExternalRoundId, result.ExternalRoundId);
 		Assert.Equal(resp.ExternalBetId, result.ExternalBetId);
 		Assert.Equal(resp.ExternalGameId, result.ExternalGameId);
 		Assert.Equal(resp.ExternalCreatedOn, result.ExternalCreatedOn);
@@ -124,8 +122,7 @@ public class GameRecordQueryServiceTest
 
 		var resp = new HistoryGameResp(
 			PlayerCode: "4ucmqplxb029",
-			ExternalRoundId: "gpas_9LdEl9Rtbt_zDNC0oX8N",
-			ExternalBetId: "4dae8cebcfaf4e0191e437e1c295deca",
+			ExternalBetId: "gpas_9LdEl9Rtbt_zDNC0oX8N",
 			ExternalGameId: "gpas_dostormspp_pop",
 			ExternalCreatedOn: new DateTimeOffset(2024, 07, 08, 07, 06, 05, 000, TimeSpan.Zero),
 			ExternalClosedOn: new DateTimeOffset(2024, 07, 08, 07, 06, 06, 000, TimeSpan.Zero),
@@ -190,7 +187,6 @@ public class GameRecordQueryServiceTest
 		var result = actual.FirstOrDefault();
 		Assert.NotNull(result);
 		Assert.Equal(resp.PlayerCode, result.PlayerCode);
-		Assert.Equal(resp.ExternalRoundId, result.ExternalRoundId);
 		Assert.Equal(resp.ExternalBetId, result.ExternalBetId);
 		Assert.Equal(resp.ExternalGameId, result.ExternalGameId);
 		Assert.Equal(resp.ExternalCreatedOn, result.ExternalCreatedOn);
@@ -223,8 +219,7 @@ public class GameRecordQueryServiceTest
 
 		var resp = new HistoryGameResp(
 			PlayerCode: "4ucmqplxb029",
-			ExternalRoundId: "live_87615669175",
-			ExternalBetId: "25e1afd4d45c46ffb8dbbbd75fc5da7b",
+			ExternalBetId: "live_87615669175",
 			ExternalGameId: "ubal",
 			ExternalCreatedOn: new DateTimeOffset(2024, 07, 09, 02, 50, 39, 000, TimeSpan.Zero),
 			ExternalClosedOn: new DateTimeOffset(2024, 07, 09, 02, 50, 52, 000, TimeSpan.Zero),
@@ -289,7 +284,6 @@ public class GameRecordQueryServiceTest
 		var result = actual.FirstOrDefault();
 		Assert.NotNull(result);
 		Assert.Equal(resp.PlayerCode, result.PlayerCode);
-		Assert.Equal(resp.ExternalRoundId, result.ExternalRoundId);
 		Assert.Equal(resp.ExternalBetId, result.ExternalBetId);
 		Assert.Equal(resp.ExternalGameId, result.ExternalGameId);
 		Assert.Equal(resp.ExternalCreatedOn, result.ExternalCreatedOn);
@@ -322,8 +316,7 @@ public class GameRecordQueryServiceTest
 
 		var resp = new HistoryGameResp(
 			PlayerCode: "4ucmqplxb029",
-			ExternalRoundId: "live_87615669173",
-			ExternalBetId: "25e1afd4d45c46ffb8dbbbd75fc5da7b",
+			ExternalBetId: "live_87615669173",
 			ExternalGameId: "ubal",
 			ExternalCreatedOn: new DateTimeOffset(2024, 07, 09, 02, 49, 20, 000, TimeSpan.Zero),
 			ExternalClosedOn: new DateTimeOffset(2024, 07, 09, 02, 49, 34, 808, TimeSpan.Zero),
@@ -388,7 +381,6 @@ public class GameRecordQueryServiceTest
 		var result = actual.FirstOrDefault();
 		Assert.NotNull(result);
 		Assert.Equal(resp.PlayerCode, result.PlayerCode);
-		Assert.Equal(resp.ExternalRoundId, result.ExternalRoundId);
 		Assert.Equal(resp.ExternalBetId, result.ExternalBetId);
 		Assert.Equal(resp.ExternalGameId, result.ExternalGameId);
 		Assert.Equal(resp.ExternalCreatedOn, result.ExternalCreatedOn);
@@ -421,8 +413,7 @@ public class GameRecordQueryServiceTest
 
 		var resp = new HistoryGameResp(
 			PlayerCode: "4ucmqplxb029",
-			ExternalRoundId: "live_87615669174",
-			ExternalBetId: "25e1afd4d45c46ffb8dbbbd75fc5da7b",
+			ExternalBetId: "live_87615669174",
 			ExternalGameId: "ubal",
 			ExternalCreatedOn: new DateTimeOffset(2024, 07, 09, 02, 49, 59, 000, TimeSpan.Zero),
 			ExternalClosedOn: new DateTimeOffset(2024, 07, 09, 02, 50, 14, 000, TimeSpan.Zero),
@@ -487,7 +478,6 @@ public class GameRecordQueryServiceTest
 		var result = actual.FirstOrDefault();
 		Assert.NotNull(result);
 		Assert.Equal(resp.PlayerCode, result.PlayerCode);
-		Assert.Equal(resp.ExternalRoundId, result.ExternalRoundId);
 		Assert.Equal(resp.ExternalBetId, result.ExternalBetId);
 		Assert.Equal(resp.ExternalGameId, result.ExternalGameId);
 		Assert.Equal(resp.ExternalCreatedOn, result.ExternalCreatedOn);

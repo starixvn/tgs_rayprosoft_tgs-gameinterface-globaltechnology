@@ -311,8 +311,7 @@ public class GameApiClient(
 			if (recordNode is JsonObject record)
 				yield return new HistoryGameResp(
 					PlayerCode: recordNode["playerId"]!.GetValue<string>()!,
-					ExternalRoundId: recordNode["roundId"]!.GetValue<string>()!,
-					ExternalBetId: recordNode["sessionId"]!.GetValue<string>()!,
+					ExternalBetId: recordNode["roundId"]!.GetValue<string>()!,
 					ExternalGameId: recordNode["gameCode"]!.GetValue<string>()!,
 					ExternalCreatedOn: _dateTimeConverter.StringConvertToDatetime(recordNode["startTime"]!.GetValue<string>()!),
 					ExternalClosedOn: _dateTimeConverter.StringConvertToDatetime(recordNode["endTime"]!.GetValue<string>()!),
