@@ -6,6 +6,7 @@ using Tgs.GameInterface.GlobalTechnology.Core.ApplicationServices;
 using Tgs.ServiceUtility;
 
 namespace Tgs.GameInterface.GlobalTechnology.IntegrationTest;
+
 public class GameInterfaceGlobalTechnologyClient_FundOutTest
 {
 	[Fact]

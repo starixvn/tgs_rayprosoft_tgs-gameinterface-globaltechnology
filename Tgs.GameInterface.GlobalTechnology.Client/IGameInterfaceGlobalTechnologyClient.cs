@@ -14,6 +14,8 @@ public interface IGameInterfaceGlobalTechnologyClient
 
 	IAsyncEnumerable<GameRecordInfo> GameRecordAsync(Uri dataApiUrl, int brandId, string secretKey, DateTimeOffset startTime, DateTimeOffset endTime, int page = 1, int pageSize = 5000, CancellationToken cancellationToken = default);
 
+	ValueTask<GameRecordDetailReply> GameRecordDetailAsync(Uri dataApiUrl, int brandId, string secretKey, string externalProviderCode, string externalBetId, DateTimeOffset externalEndTime, string language = "CN", CancellationToken cancellationToken = default);
+
 	ValueTask<GameUrlReply> GameUrlAsync(Uri apiUrl, Uri launcherApiUrl, int brandId, string secretKey, string playerCode, string currency, string language, bool isMobile, string gameCode, CancellationToken cancellationToken = default);
 
 	ValueTask<GameUrlReply> GameUrlPlaytechByLiveAsync(Uri apiUrl, Uri launcherApiUrl, int brandId, string secretKey, string playerCode, string currency, string language, bool isMobile, CancellationToken cancellationToken = default);

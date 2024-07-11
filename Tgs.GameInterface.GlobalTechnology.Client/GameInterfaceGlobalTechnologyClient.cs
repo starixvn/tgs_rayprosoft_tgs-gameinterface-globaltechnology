@@ -9,91 +9,69 @@ internal sealed class GameInterfaceGlobalTechnologyClient(
 	: IGameInterfaceGlobalTechnologyClient
 {
 	public async ValueTask<string> CheckingServiceAsync(string machineName, CancellationToken cancellationToken = default)
-	{
-		var request = new CheckingServiceRequest
-		{
-			MachineName = machineName,
-		};
-
-		var reply = await client.CheckingServiceAsync(
-				request: request,
-				cancellationToken: cancellationToken)
-			.ConfigureAwait(false);
-
-		return reply.MachineName;
-	}
+		=> (await client.CheckingServiceAsync(
+			request: new CheckingServiceRequest
+			{
+				MachineName = machineName,
+			},
+			cancellationToken: cancellationToken)
+		.ConfigureAwait(false)).MachineName;
 
 	public async ValueTask<FundReply> FundInAsync(Uri apiUrl, int brandId, string secretKey, string playerCode, string currency, string orderId, decimal amount, CancellationToken cancellationToken = default)
-	{
-		var request = new FundRequest
-		{
-			ApiUrl = apiUrl.ToString(),
-			BrandId = brandId,
-			SecretKey = secretKey,
-			PlayerCode = playerCode,
-			Currency = currency,
-			OrderId = orderId,
-			Amount = amount,
-		};
-
-		return await client.FundInAsync(
-			request: request,
+		=> await client.FundInAsync(
+			request: new FundRequest
+			{
+				ApiUrl = apiUrl.ToString(),
+				BrandId = brandId,
+				SecretKey = secretKey,
+				PlayerCode = playerCode,
+				Currency = currency,
+				OrderId = orderId,
+				Amount = amount,
+			},
 			cancellationToken: cancellationToken)
-			.ConfigureAwait(false);
-	}
+		.ConfigureAwait(false);
 
 	public async ValueTask<FundReply> FundOutAsync(Uri apiUrl, int brandId, string secretKey, string playerCode, string currency, string orderId, decimal amount, CancellationToken cancellationToken = default)
-	{
-		var request = new FundRequest
-		{
-			ApiUrl = apiUrl.ToString(),
-			BrandId = brandId,
-			SecretKey = secretKey,
-			PlayerCode = playerCode,
-			Currency = currency,
-			OrderId = orderId,
-			Amount = amount,
-		};
-
-		return await client.FundOutAsync(
-			request: request,
+		=> await client.FundOutAsync(
+			request: new FundRequest
+			{
+				ApiUrl = apiUrl.ToString(),
+				BrandId = brandId,
+				SecretKey = secretKey,
+				PlayerCode = playerCode,
+				Currency = currency,
+				OrderId = orderId,
+				Amount = amount,
+			},
 			cancellationToken: cancellationToken)
-			.ConfigureAwait(false);
-	}
+		.ConfigureAwait(false);
 
 	public async ValueTask<bool> FundStatusAsync(Uri apiUrl, int brandId, string secretKey, string orderId, CancellationToken cancellationToken = default)
-	{
-		var request = new FundStatusRequest
-		{
-			ApiUrl = apiUrl.ToString(),
-			BrandId = brandId,
-			SecretKey = secretKey,
-			OrderId = orderId
-		};
-
-		var reply = await client.FundStatusAsync(
-			request: request,
+		=> (await client.FundStatusAsync(
+			request: new FundStatusRequest
+			{
+				ApiUrl = apiUrl.ToString(),
+				BrandId = brandId,
+				SecretKey = secretKey,
+				OrderId = orderId
+			},
 			cancellationToken: cancellationToken)
-			.ConfigureAwait(false);
-
-		return reply.Status;
-	}
+		.ConfigureAwait(false)).Status;
 
 	public async IAsyncEnumerable<GameRecordInfo> GameRecordAsync(Uri dataApiUrl, int brandId, string secretKey, DateTimeOffset startTime, DateTimeOffset endTime, int page = 1, int pageSize = 5000, [EnumeratorCancellation] CancellationToken cancellationToken = default)
 	{
-		var request = new GameRecordRequest
-		{
-			DataApiUrl = dataApiUrl.ToString(),
-			BrandId = brandId,
-			SecretKey = secretKey,
-			StartTime = startTime.ToTimestamp(),
-			EndTime = endTime.ToTimestamp(),
-			Page = page,
-			PageSize = pageSize
-		};
-
 		var reply = await client.GameRecordAsync(
-			request: request,
+			request: new GameRecordRequest
+			{
+				DataApiUrl = dataApiUrl.ToString(),
+				BrandId = brandId,
+				SecretKey = secretKey,
+				StartTime = startTime.ToTimestamp(),
+				EndTime = endTime.ToTimestamp(),
+				Page = page,
+				PageSize = pageSize
+			},
 		   cancellationToken: cancellationToken)
 		   .ConfigureAwait(false);
 
@@ -101,94 +79,89 @@ internal sealed class GameInterfaceGlobalTechnologyClient(
 			yield return info;
 	}
 
-	public async ValueTask<GameUrlReply> GameUrlAsync(Uri apiUrl, Uri launcherApiUrl, int brandId, string secretKey, string playerCode, string currency, string language, bool isMobile, string gameCode, CancellationToken cancellationToken = default)
-	{
-		var request = new GameUrlRequest
-		{
-			ApiUrl = apiUrl.ToString(),
-			LauncherApiUrl = launcherApiUrl.ToString(),
-			BrandId = brandId,
-			SecretKey = secretKey,
-			PlayerCode = playerCode,
-			Currency = currency,
-			Language = language,
-			IsMobile = isMobile,
-			GameCode = gameCode,
-		};
-
-		return await client.GameUrlAsync(
-			request: request,
+	public async ValueTask<GameRecordDetailReply> GameRecordDetailAsync(Uri dataApiUrl, int brandId, string secretKey, string externalProviderCode, string externalBetId, DateTimeOffset externalEndTime, string language = "CN", CancellationToken cancellationToken = default)
+		=> await client.GameRecordDetailAsync(
+			request: new GameRecordDetailRequest
+			{
+				DataApiUrl = dataApiUrl.ToString(),
+				BrandId = brandId,
+				SecretKey = secretKey,
+				ExternalProviderCode = externalProviderCode,
+				ExternalBetId = externalBetId,
+				ExternalEndTime = externalEndTime.ToTimestamp(),
+				Language = language,
+			},
 		   cancellationToken: cancellationToken)
-		   .ConfigureAwait(false);
-	}
+		.ConfigureAwait(false);
+
+	public async ValueTask<GameUrlReply> GameUrlAsync(Uri apiUrl, Uri launcherApiUrl, int brandId, string secretKey, string playerCode, string currency, string language, bool isMobile, string gameCode, CancellationToken cancellationToken = default)
+		=> await client.GameUrlAsync(
+			request: new GameUrlRequest
+			{
+				ApiUrl = apiUrl.ToString(),
+				LauncherApiUrl = launcherApiUrl.ToString(),
+				BrandId = brandId,
+				SecretKey = secretKey,
+				PlayerCode = playerCode,
+				Currency = currency,
+				Language = language,
+				IsMobile = isMobile,
+				GameCode = gameCode,
+			},
+		   cancellationToken: cancellationToken)
+		.ConfigureAwait(false);
 
 	public async ValueTask<GameUrlReply> GameUrlPlaytechByLiveAsync(Uri apiUrl, Uri launcherApiUrl, int brandId, string secretKey, string playerCode, string currency, string language, bool isMobile, CancellationToken cancellationToken = default)
-	{
-		var request = new GameUrlPlaytechByLiveRequest
-		{
-			ApiUrl = apiUrl.ToString(),
-			LauncherApiUrl = launcherApiUrl.ToString(),
-			BrandId = brandId,
-			SecretKey = secretKey,
-			PlayerCode = playerCode,
-			Currency = currency,
-			Language = language,
-			IsMobile = isMobile
-		};
-
-		return await client.GameUrlPlaytechByLiveAsync(
-			request: request,
+		=> await client.GameUrlPlaytechByLiveAsync(
+			request: new GameUrlPlaytechByLiveRequest
+			{
+				ApiUrl = apiUrl.ToString(),
+				LauncherApiUrl = launcherApiUrl.ToString(),
+				BrandId = brandId,
+				SecretKey = secretKey,
+				PlayerCode = playerCode,
+				Currency = currency,
+				Language = language,
+				IsMobile = isMobile
+			},
 		   cancellationToken: cancellationToken)
-		   .ConfigureAwait(false);
-	}
+		.ConfigureAwait(false);
 
 	public async ValueTask<PlayerBalanceReply> PlayerBalanceAsync(Uri apiUrl, int brandId, string secretKey, string playerCode, CancellationToken cancellationToken = default)
-	{
-		var request = new PlayerBalanceRequest
-		{
-			ApiUrl = apiUrl.ToString(),
-			BrandId = brandId,
-			SecretKey = secretKey,
-			PlayerCode = playerCode
-		};
-
-		return await client.PlayerBalanceAsync(
-			request: request,
+		=> await client.PlayerBalanceAsync(
+			request: new PlayerBalanceRequest
+			{
+				ApiUrl = apiUrl.ToString(),
+				BrandId = brandId,
+				SecretKey = secretKey,
+				PlayerCode = playerCode
+			},
 		   cancellationToken: cancellationToken)
-		   .ConfigureAwait(false);
-	}
+		.ConfigureAwait(false);
 
 	public async ValueTask PlayerCreateAsync(Uri apiUrl, int brandId, string secretKey, string playerCode, string currency, string language, CancellationToken cancellationToken = default)
-	{
-		var request = new PlayerCreateRequest
-		{
-			ApiUrl = apiUrl.ToString(),
-			BrandId = brandId,
-			SecretKey = secretKey,
-			PlayerCode = playerCode,
-			Currency = currency,
-			Language = language
-		};
-
-		_ = await client.PlayerCreateAsync(
-			request: request,
-		   cancellationToken: cancellationToken)
-		   .ConfigureAwait(false);
-	}
+		=> _ = await client.PlayerCreateAsync(
+			request: new PlayerCreateRequest
+			{
+				ApiUrl = apiUrl.ToString(),
+				BrandId = brandId,
+				SecretKey = secretKey,
+				PlayerCode = playerCode,
+				Currency = currency,
+				Language = language
+			},
+			cancellationToken: cancellationToken)
+		.ConfigureAwait(false);
 
 	public async ValueTask PlayerLogoutAsync(Uri apiUrl, int brandId, string secretKey, string playerCode, CancellationToken cancellationToken = default)
-	{
-		var request = new PlayerLogoutRequest
-		{
-			ApiUrl = apiUrl.ToString(),
-			BrandId = brandId,
-			SecretKey = secretKey,
-			PlayerCode = playerCode
-		};
-
-		_ = await client.PlayerLogoutAsync(
-			request: request,
-		   cancellationToken: cancellationToken)
-		   .ConfigureAwait(false);
-	}
+		=> _ = await client.PlayerLogoutAsync(
+			request: new PlayerLogoutRequest
+			{
+				ApiUrl = apiUrl.ToString(),
+				BrandId = brandId,
+				SecretKey = secretKey,
+				PlayerCode = playerCode
+			},
+			cancellationToken: cancellationToken)
+		.ConfigureAwait(false);
 }

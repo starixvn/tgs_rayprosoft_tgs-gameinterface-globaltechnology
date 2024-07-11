@@ -17,6 +17,7 @@ service GameInterfaceGlobalTechnology {
 	rpc GameUrlPlaytechByLive (GameUrlPlaytechByLiveRequest) returns (GameUrlReply);
 	rpc GameUrl (GameUrlRequest) returns (GameUrlReply);
 	rpc GameRecord (GameRecordRequest) returns (GameRecordReply);
+	rpc GameRecordDetail (GameRecordDetailRequest) returns (GameRecordDetailReply);
 	rpc CheckingService(CheckingServiceRequest) returns (CheckingServiceReply);
 }
 
@@ -93,6 +94,16 @@ message GameRecordRequest {
   int32 page_size = 7;
 }
 
+message GameRecordDetailRequest {
+  string data_api_url = 1;
+  int32 brand_id = 2;
+  string secret_key = 3;
+  string external_provider_code = 4;
+  string external_bet_id = 5;
+  google.protobuf.Timestamp external_end_time = 6;
+  string language = 7;
+}
+
 message CheckingServiceRequest{
   string machine_name = 1;
 }
@@ -136,6 +147,11 @@ message GameRecordInfo {
 	phoenix.protobuf.DecimalValue jackpot_contribution = 11;
 	phoenix.protobuf.DecimalValue jackpot_win = 12;
 	string additional_data = 13;
+}
+
+message GameRecordDetailReply {
+	bool is_support = 1;
+	string detail_url = 2;
 }
 
 message CheckingServiceReply{

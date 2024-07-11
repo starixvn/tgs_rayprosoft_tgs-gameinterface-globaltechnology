@@ -11,6 +11,7 @@ public class GameInterfaceGlobalTechnologyGrpcService(
 	IGetService<FundInQuery, FundResult> fundInService,
 	IGetService<FundOutQuery, FundResult> fundOutService,
 	IGetService<FundStatusQuery, bool> fundStatusService,
+	IGetService<GameRecordDetailQuery, GameRecordDetailResult> gameRecordDetailService,
 	IQueryService<GameRecordQuery, GameRecordResult> gameRecordService,
 	IGetService<GameUrlQuery, GameUrlResult> gameUrlService,
 	IGetService<PlayerBalanceQuery, PlayerBalanceResult> playerBalanceService,
@@ -143,6 +144,31 @@ public class GameInterfaceGlobalTechnologyGrpcService(
 		}
 
 		return reply;
+	}
+
+	public override async Task<GameRecordDetailReply> GameRecordDetail(GameRecordDetailRequest request, ServerCallContext context)
+	{
+		var query = new GameRecordDetailQuery
+		{
+			ApiUrl = new Uri(request.DataApiUrl),
+			BrandId = request.BrandId,
+			SecretKey = request.SecretKey,
+			ExternalProviderCode = request.ExternalProviderCode,
+			ExternalBetId = request.ExternalBetId,
+			ExternalEndTime = request.ExternalEndTime.ToDateTimeOffset(),
+			Language = request.Language
+		};
+
+		var result = await gameRecordDetailService.GetAsync(
+			query: query,
+			cancellationToken: context.CancellationToken)
+			.ConfigureAwait(false);
+
+		return new GameRecordDetailReply
+		{
+			IsSupport = result.IsSupport,
+			DetailUrl = result.DetailUrl
+		};
 	}
 
 	public override async Task<GameUrlReply> GameUrl(GameUrlRequest request, ServerCallContext context)

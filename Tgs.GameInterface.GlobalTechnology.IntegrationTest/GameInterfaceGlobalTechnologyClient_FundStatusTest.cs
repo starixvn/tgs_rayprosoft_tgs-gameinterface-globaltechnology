@@ -1,11 +1,11 @@
-﻿using System.Text.Json.Nodes;
-using Grpc.Net.Client;
+﻿using Grpc.Net.Client;
 using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
 using Tgs.GameInterface.GlobalTechnology.Core.ApplicationServices;
 using Tgs.ServiceUtility;
 
 namespace Tgs.GameInterface.GlobalTechnology.IntegrationTest;
+
 public class GameInterfaceGlobalTechnologyClient_FundStatusTest
 {
 	[Fact]
@@ -41,7 +41,7 @@ public class GameInterfaceGlobalTechnologyClient_FundStatusTest
 				address: web.Server.BaseAddress,
 				channelOptions: new GrpcChannelOptions { HttpHandler = web.Server.CreateHandler() })));
 
-		var actual = await sut.FundStatusAsync(apiUrl, brandId, secretKey,  orderId);
+		var actual = await sut.FundStatusAsync(apiUrl, brandId, secretKey, orderId);
 
 		Assert.True(actual);
 	}

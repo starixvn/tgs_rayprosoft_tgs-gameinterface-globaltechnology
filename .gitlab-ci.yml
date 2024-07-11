@@ -101,7 +101,7 @@ deploy-prod:
     name: pgtgs/tgs-backend-deploy:latest
   variables:
     namespace: prod
-    replica: 1
+    replica: 2
     DedicatedKey: dedicated_game
     NodeSelectorKey: node-selector_game
   environment:

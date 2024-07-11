@@ -6,8 +6,6 @@ namespace Tgs.GameInterface.GlobalTechnology.Controllers;
 
 [Route("GT")]
 [ApiController]
-[Produces("application/json")]
-[Consumes("application/json")]
 public class GlobalTechnologyController : ControllerBase
 {
 	/// <summary>
@@ -63,6 +61,20 @@ public class GlobalTechnologyController : ControllerBase
 			[FromServices] IQueryService<GameRecordQuery, GameRecordResult> service,
 			GameRecordQuery source)
 		=> service.QueryAsync(
+			query: source,
+			cancellationToken: HttpContext.RequestAborted);
+
+	/// <summary>
+	/// Games the record detail asynchronous.
+	/// </summary>
+	/// <param name="service">The service.</param>
+	/// <param name="source">The source.</param>
+	/// <returns></returns>
+	[HttpPost("game/record/detail", Name = "GameRecordDetail")]
+	public ValueTask<GameRecordDetailResult> GameRecordDetailAsync(
+			[FromServices] IGetService<GameRecordDetailQuery, GameRecordDetailResult> service,
+			GameRecordDetailQuery source)
+		=> service.GetAsync(
 			query: source,
 			cancellationToken: HttpContext.RequestAborted);
 

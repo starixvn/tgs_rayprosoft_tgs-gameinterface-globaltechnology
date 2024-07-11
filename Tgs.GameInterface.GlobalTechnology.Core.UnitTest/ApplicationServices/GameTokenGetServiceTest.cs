@@ -1,9 +1,9 @@
-﻿using System.Text.Json.Nodes;
-using NSubstitute;
+﻿using NSubstitute;
 using Tgs.GameInterface.GlobalTechnology.Core.ApplicationServices;
 using Tgs.GameInterface.GlobalTechnology.Core.Models;
 
 namespace Tgs.GameInterface.GlobalTechnology.Core.UnitTest.ApplicationServices;
+
 public class GameTokenGetServiceTest
 {
 	[Fact]

@@ -3,7 +3,6 @@ using Grpc.Net.Client;
 using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
 using Tgs.GameInterface.GlobalTechnology.Core.ApplicationServices;
-using Tgs.GameInterface.GlobalTechnology.Protos;
 using Tgs.ServiceUtility;
 
 namespace Tgs.GameInterface.GlobalTechnology.IntegrationTest;

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using OpenTelemetry.Exporter;
 
 namespace Tgs.GameInterface.GlobalTechnology.IntegrationTest;
+
 internal class GameInterfacePragmaticPlayApplication(Action<IWebHostBuilder>? webHostConfigure = null) : WebApplicationFactory<Program>
 {
 	protected override void ConfigureWebHost(IWebHostBuilder builder)

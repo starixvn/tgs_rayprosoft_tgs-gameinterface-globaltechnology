@@ -24,4 +24,6 @@ public interface IGameApiClient
 	ValueTask<bool> PaymentPlayerCheckTransAsync(Uri apiBaseUrl, int brandId, string secretKey, string extTransId, CancellationToken cancellationToken = default);
 
 	IAsyncEnumerable<HistoryGameResp> HistoryGameAsync(Uri apiBaseUrl, int brandId, string secretKey, DateTimeOffset startTime, DateTimeOffset endTime, int page = 1, int size = 5000, CancellationToken cancellationToken = default);
+
+	ValueTask<HistoryRoundDetailResp> HistoryRoundDetailAsync(Uri apiBaseUrl, int brandId, string secretKey, string providerCode, string roundId, DateTimeOffset endTime, string language, CancellationToken cancellationToken = default);
 }

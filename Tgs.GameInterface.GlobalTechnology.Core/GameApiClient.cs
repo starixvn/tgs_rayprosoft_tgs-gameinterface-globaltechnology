@@ -13,8 +13,7 @@ namespace Tgs.GameInterface.GlobalTechnology.Core;
 public class GameApiClient(
 	ILogger<GameApiClient> logger,
 	HttpClient httpClient,
-	IParameterEncryptor encryptor)
-	: IGameApiClient
+	IParameterEncryptor encryptor) : IGameApiClient
 {
 	private readonly DateTimeConverter _dateTimeConverter = new();
 
@@ -347,6 +346,39 @@ public class GameApiClient(
 		var error = jsonNode["error"]!.GetValue<string>()!;
 		if (error != "0" && !error.Equals("P_04", StringComparison.OrdinalIgnoreCase))
 			throw new ErrorCodeException(error, jsonNode["message"]!.GetValue<string>()!);
+	}
+
+	public async ValueTask<HistoryRoundDetailResp> HistoryRoundDetailAsync(Uri apiBaseUrl, int brandId, string secretKey, string providerCode, string roundId, DateTimeOffset endTime, string language, CancellationToken cancellationToken = default)
+	{
+		var parameters = new JsonObject
+		{
+			["requestId"] = Guid.NewGuid().ToString("N"),
+			["brandId"] = brandId,
+			["providerCode"] = providerCode,
+			["roundId"] = roundId,
+			["endTime"] = _dateTimeConverter.DatetimeConvertToString(endTime),
+			["language"] = language
+		};
+
+		var jsonNode = await PostAsync(
+			apiBaseUrl: apiBaseUrl,
+			relativeUrl: "/history/roundDetail",
+			secretKey: secretKey,
+			parameters: parameters,
+			logPrefix: nameof(HistoryRoundDetailAsync),
+			cancellationToken: cancellationToken)
+			.ConfigureAwait(false);
+
+		var error = jsonNode["error"]!.GetValue<string>()!;
+		return error != "0"
+			? error.Equals("50001", StringComparison.OrdinalIgnoreCase)
+				? new HistoryRoundDetailResp(
+					IsSupport: false,
+					DetailUrl: string.Empty)
+				: throw new ErrorCodeException(error, jsonNode["message"]!.GetValue<string>()!)
+			: new HistoryRoundDetailResp(
+				IsSupport: true,
+				DetailUrl: jsonNode["data"]!.ToString());
 	}
 
 	private async ValueTask<JsonNode> PostAsync(Uri apiBaseUrl, string relativeUrl, string secretKey, JsonObject parameters, string logPrefix, CancellationToken cancellationToken = default)
