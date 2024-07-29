@@ -16,7 +16,7 @@ public class GameInterfaceGlobalTechnologyClient_FundStatusTest
 		var secretKey = "SMT1ZCVRI3uqtOXNV93q";
 		var orderId = "36B92C00-23E4-4209-B71E-2F7CB752759A";
 
-		var web = new GameInterfaceGlobalTechnologyClient(builder => _ = builder.ConfigureServices(services =>
+		var web = new GameInterfaceGlobalTechnologyApplication(builder => _ = builder.ConfigureServices(services =>
 		{
 			var fakeService = Substitute.For<IGetService<FundStatusQuery, bool>>();
 
