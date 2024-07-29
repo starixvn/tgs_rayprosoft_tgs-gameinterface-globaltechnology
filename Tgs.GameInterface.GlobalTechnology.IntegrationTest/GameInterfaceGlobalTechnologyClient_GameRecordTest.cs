@@ -67,7 +67,7 @@ public class GameInterfaceGlobalTechnologyClient_GameRecordTest
 			}
 			""")!.ToJsonString());
 
-		var web = new GameInterfacePragmaticPlayApplication(builder => _ = builder.ConfigureServices(services =>
+		var web = new GameInterfaceGlobalTechnologyClient(builder => _ = builder.ConfigureServices(services =>
 		{
 			var fakeService = Substitute.For<IQueryService<GameRecordQuery, GameRecordResult>>();
 

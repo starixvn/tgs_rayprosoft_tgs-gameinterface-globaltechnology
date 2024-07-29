@@ -25,7 +25,7 @@ public class GameInterfaceGlobalTechnologyClient_GameUrlPlaytechByLiveTest
 			IsPlayerExist: true,
 			GameUrl: "https://api-stg.gmgiantgold.com/launcher");
 
-		var web = new GameInterfacePragmaticPlayApplication(builder => _ = builder.ConfigureServices(services =>
+		var web = new GameInterfaceGlobalTechnologyClient(builder => _ = builder.ConfigureServices(services =>
 		{
 			var fakeService = Substitute.For<IGetService<GameUrlQuery, GameUrlResult>>();
 

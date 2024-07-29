@@ -25,7 +25,7 @@ public class GameInterfaceGlobalTechnologyClient_PlayerBalance
 			BonusBalance: 0.0m,
 			BrandId: 908);
 
-		var web = new GameInterfacePragmaticPlayApplication(builder => _ = builder.ConfigureServices(services =>
+		var web = new GameInterfaceGlobalTechnologyClient(builder => _ = builder.ConfigureServices(services =>
 		{
 			var fakeService = Substitute.For<IGetService<PlayerBalanceQuery, PlayerBalanceResult>>();
 
