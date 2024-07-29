@@ -31,7 +31,7 @@ public class GameInterfaceGlobalTechnologyClient_FundInTest
 				["extTransId"] = "36B92C00-23E4-4209-B71E-2F7CB752759A",
 			}.ToJsonString());
 
-		var web = new GameInterfacePragmaticPlayApplication(builder => _ = builder.ConfigureServices(services =>
+		var web = new GameInterfaceGlobalTechnologyClient(builder => _ = builder.ConfigureServices(services =>
 		{
 			var fakeService = Substitute.For<IGetService<FundInQuery, FundResult>>();
 

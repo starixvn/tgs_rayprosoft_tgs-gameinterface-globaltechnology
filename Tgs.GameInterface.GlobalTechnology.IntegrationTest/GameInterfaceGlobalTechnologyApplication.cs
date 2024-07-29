@@ -6,7 +6,7 @@ using OpenTelemetry.Exporter;
 
 namespace Tgs.GameInterface.GlobalTechnology.IntegrationTest;
 
-internal class GameInterfacePragmaticPlayApplication(Action<IWebHostBuilder>? webHostConfigure = null) : WebApplicationFactory<Program>
+internal class GameInterfaceGlobalTechnologyClient(Action<IWebHostBuilder>? webHostConfigure = null) : WebApplicationFactory<Program>
 {
 	protected override void ConfigureWebHost(IWebHostBuilder builder)
 	{

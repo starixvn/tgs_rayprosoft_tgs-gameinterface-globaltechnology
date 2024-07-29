@@ -20,7 +20,7 @@ public class GameInterfaceGlobalTechnologyClient_PlayerCreate
 
 		var fakeService = Substitute.For<ICommandService<PlayerCreateCommand>>();
 
-		var web = new GameInterfacePragmaticPlayApplication(builder => _ = builder.ConfigureServices(services => _ = services.AddTransient(_ => fakeService)));
+		var web = new GameInterfaceGlobalTechnologyClient(builder => _ = builder.ConfigureServices(services => _ = services.AddTransient(_ => fakeService)));
 
 		var sut = new Client.GameInterfaceGlobalTechnologyClient(new Protos.GameInterfaceGlobalTechnology.GameInterfaceGlobalTechnologyClient(
 			GrpcChannel.ForAddress(
